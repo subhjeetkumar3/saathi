@@ -1,0 +1,645 @@
+<style>
+.none{
+	display:none !important;
+}
+</style>
+
+<div <?php if(!empty($er)){?>style="display:block;" <?php } ?>class="modal " id="errorModal" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal-dialog" >
+		<div class="modal-content">
+			<div class="modal-header" style="padding: 10px 15px;">
+				<a href="<?php echo base_url();?>index.php/home/serviceProvider"> <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></a>
+				<h4 style="color:red;" class="modal-title"><?php echo $total_error;  ?></h4>
+			</div>
+			<div class="modal-body" style="height:65vh !important;">
+				<div class="table-responsive" style="height: 100%;">
+					<table class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>Error</th>
+							<th>Unique Id</th>
+							<th>Name</th>
+							<th>Address</th>
+							<th>Mobile</th>
+							<th>Landline</th>
+							<th>Email</th>
+							<th>Other Contact</th>
+							<th>Location</th>
+							<th>District</th>
+							<th>State</th>
+							<th>Service Focus</th>
+							<th>Queer Friendly rating</th>
+							<th>Qualifications</th>
+							<th>Affiliation</th>
+							<th>Linkage</th>
+							<th>Days and Time</th>
+							<th>Face To Face Consulations</th>
+							<th>Home Visits</th>
+							<th>Consulations On Telephone</th>
+							<th>Consulations Through Email</th>
+							<th>Consulations over Skype / video conference/other chat</th>
+							<th>Consulation Charges</th>
+							<th>Concession</th>
+							<th>Latitude</th>
+							<th>Longitude</th>
+							<th>Sexual Health Services</th>
+							<th>Mental health services</th>
+							<th>Legal aid services</th>
+							<th>Dealing with sexually transmitted / reproductive tract infection testing and treatment</th>
+							<th>Dealing with HIV counselling and testing issues</th>
+							<th>Dealing with HIV prevention, care, support and treatment issues</th>
+							<th>Prevention of parent to child transmission of HIV</th>
+							<th>Guidance around family planning, safer child birth, abortion issues</th>
+							<th>Dealing with feminization and masculinisation (gender transition) medical procedures</th>
+							<th>Dealing with sexual injuries and dysfunction</th>
+							<th>Dealing with physical impact of sexual assault / sexual abuse</th>
+							<th>Dealing with Sexual health and disablities issues</th>
+							<th>Others</th>
+							<th>Dealing with confusion / dysphoria, depression, anxiety or other mental health concerns around gender, sexuality or HIV status</th>
+							<th>Dealing with disclosure around gender or sexuality</th>
+							<th>Dealing with HIV disclosure, HIV and marriage / relationships, HIV succession planning</th>
+							<th>Dealing with feminization and masculinisation (gender transition) – psychosocial issues</th>
+							<th>Dealing with family acceptance issues around gender and sexuality</th>
+							<th>Dealing with marital / relationship issues</th>
+							<th>Dealing with gender and sexuality issues in relation to disabilities</th>
+							<th>Dealing with stigma, discrimination and violence around gender and sexuality in educational institutions, seeking employment, workplace, health or legal aid services</th>
+							<th>Dealing with stigma, discrimination and violence around HIV or disability in educational institutions, seeking employment, workplace, health or legal aid services</th>
+							<th>Dealing with emotional impact of sexual assault / sexual abuse</th>
+							<th>Dealing with ageing issues around gender and sexuality</th>
+							<th>Dealing with mental health concerns in relation to reproductive health</th>
+							<th>Others</th>
+							<th>Information on legal rights of queer people</th>
+							<th>Dealing with marital / relationship issues</th>
+							<th>Legal gender identity change guidance</th>
+							<th>Dealing with extortion or blackmail around gender, sexuality or HIV status</th>
+							<th>Dealing with sexual assault / sexual abuse</th>
+							<th>Dealing with family or intimate partner violence</th>
+							<th>Dealing with issues related to inheritance / eviction from home</th>
+							<th>Dealing with issues related to insurance</th>
+							<th>Dealing with denial of rented accommodation on grounds of gender, sexuality or HIV status</th>
+							<th>Dealing with discrimination / harassment / bullying on grounds of gender and sexuality in educational institutions, seeking employment, workplace, health or legal aidservices</th>
+							<th>Dealing with discrimination / harassment / bullying on grounds of HIV status or disability in educational institutions, seeking employment, workplace, health or legal aid </th>
+							<th>Adoption guidance</th>
+							<th>Dealing with denial of reproductive health rights</th>
+							<th>Others</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php foreach($er as $value){ ?>
+						<tr>	
+							<td style="color:red;"><?php echo $value['error']?></td>
+							<td><?php echo $value['uniqueId']?></td>
+							<td><?php echo $value['name']?></td>
+							<td><?php echo $value['address']?></td>
+							<td><?php echo $value['mobile']?></td>
+							<td><?php echo $value['officePhone']?></td>
+							<td><?php echo $value['email']?></td>
+							<td><?php echo $value['otherMobile']?></td>
+							<td><?php echo $value['location']?></td>
+							<td><?php echo $value['districtId']?></td>
+							<td><?php echo $value['state']?></td>
+							<td><?php echo $value['serviceTypeId']?></td>
+							<td><?php echo $value['rating']?></td>
+							<td><?php echo $value['qualification']?></td>
+							<td><?php echo $value['affiliation']?></td>
+							<td><?php echo $value['linkage']?></td>
+							<td><?php echo $value['dayAndTime']?></td>
+							<td><?php echo $value['conFace']?></td>
+							<td><?php echo $value['conHome']?></td>
+							<td><?php echo $value['conTel']?></td>
+							<td><?php echo $value['conEmail']?></td>
+							<td><?php echo $value['conOnline']?></td>
+							<td><?php echo $value['conCharges']?></td>
+							<td><?php echo $value['concession']?></td>
+							<td><?php echo $value['latitude']?></td>
+							<td><?php echo $value['longitude']?></td>
+							<td><?php echo $value['sexualhealthservices']?></td>
+							<td><?php echo $value['mentalhealthservices']?></td>
+							<td><?php echo $value['Legalaidservices']?></td>
+						    <td><?php echo $value['shs1']?></td>
+						    <td><?php echo $value['shs2']?></td>
+						    <td><?php echo $value['shs3']?></td>
+						    <td><?php echo $value['shs4']?></td>
+						    <td><?php echo $value['shs5']?></td>
+						    <td><?php echo $value['shs6']?></td>
+						    <td><?php echo $value['shs7']?></td>
+						    <td><?php echo $value['shs8']?></td>
+						    <td><?php echo $value['shs9']?></td>
+						    <td><?php echo $value['shs10']?></td>
+						    <td><?php echo $value['mhs1']?></td>
+						    <td><?php echo $value['mhs2']?></td>
+						    <td><?php echo $value['mhs3']?></td>
+						    <td><?php echo $value['mhs4']?></td>
+						    <td><?php echo $value['mhs5']?></td>
+						    <td><?php echo $value['mhs6']?></td>
+						    <td><?php echo $value['mhs7']?></td>
+						    <td><?php echo $value['mhs8']?></td>
+						    <td><?php echo $value['mhs9']?></td>
+						    <td><?php echo $value['mhs10']?></td>
+						    <td><?php echo $value['mhs11']?></td>
+						    <td><?php echo $value['mhs12']?></td>
+						    <td><?php echo $value['mhs13']?></td>
+						    <td><?php echo $value['las1']?></td>
+						    <td><?php echo $value['las2']?></td>
+						    <td><?php echo $value['las3']?></td>
+						    <td><?php echo $value['las4']?></td>
+						    <td><?php echo $value['las5']?></td>
+						    <td><?php echo $value['las6']?></td>
+						    <td><?php echo $value['las7']?></td>
+						    <td><?php echo $value['las8']?></td>
+						    <td><?php echo $value['las9']?></td>
+						    <td><?php echo $value['las10']?></td>
+						    <td><?php echo $value['las11']?></td>
+						    <td><?php echo $value['las12']?></td>
+						    <td><?php echo $value['las13']?></td>
+						    <td><?php echo $value['las14'];?></td>
+						</tr>
+					<?php  } ?>
+					</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="<?php echo base_url();?>index.php/home/serviceProvider"><button type="button" class="btn btn-white" data-dismiss="modal">Close</button></a>
+			</div>
+		</div>
+	</div>
+</div>
+ <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Service Provider</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="">Home</a>
+                        </li>
+                        <li class="active">
+                            <strong>Service Provider</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+           <?php if($this->session->flashdata('message')){ ?>
+			<div class="alert alert-success fade in">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<i class="fa fa-check-circle fa-fw fa-lg"></i>
+				<?php echo $this->session->flashdata('message'); ?>.
+			</div>
+			<?php } ?>
+           
+            <div class="row">
+				<div class="col-lg-12">
+							<ul class="nav nav-tabs" style="background-color:white;">
+                                 <li class="<?php if(!empty($serviceProviderById)){ echo 'none'; }else { echo 'active'; } ?>"><a data-toggle="tab" href="#tab-2"><i class="fa fa-user"></i>Service Provider List</a></li>
+								 <li class="<?php if(!empty($serviceProviderById)){ echo 'active'; }else { echo ''; } ?>"><a data-toggle="tab" href="#tab-1"><i class="fa fa-user"></i>New Entry</a></li>
+                                
+							</ul>
+                    <div class="ibox float-e-margins">
+					<div class="tab-content">
+					 <div id="tab-2" class="tab-pane <?php if(!empty($serviceProviderById)){ echo ''; }else { echo 'active'; } ?>">
+						   <div class="ibox-title">
+                            <h5>Service Provider List</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                             <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <thead>
+												<tr>
+													<th>Type</th>
+                                                    <th>Name</th>
+													<th>Address</th>
+													<th>Office Phone</th>
+													<th>Mobile</th>
+													<th>Email</th>
+													<th>Latitude</th>
+													<th>Longitude</th>
+													<th>Skype Id</th>
+													<th>Website</th>
+													<th>Created Date</th>
+													<th class="text-right footable-visible footable-last-column" style="background-color:white;">Action</th>
+												</tr>
+												</thead>
+												<tbody>
+											<?php if(!empty($serviceProviderList)){?>		
+									           <?php foreach($serviceProviderList as $value) { ?>
+                                                <tr id="row<?php echo $value['serviceProviderId']; ?>">
+													<td><?php echo $value['services'];?></td>
+                                                    <td><?php echo ucfirst($value['name']); ?></td>
+													<td><?php echo $value['address']; ?></td>
+													<td><?php echo $value['officePhone']; ?></td>
+													<td><?php echo $value['mobile']; ?></td>
+													<td><?php echo $value['email']; ?></td>
+													<td><?php echo $value['latitude']; ?></td>
+													<td><?php echo $value['longitude']; ?></td>
+													<td><?php echo $value['skypeId']; ?></td>
+													<td><?php echo $value['website']; ?></td>
+													<td><?php echo date('d-m-Y H:i:s', strtotime($value['createdDate'])); ?></td>
+													<td class="text-right footable-visible footable-last-column">
+													<span class="btn-white btn btn-xs"
+													onclick="deletedTransData(<?php echo $value['serviceProviderId']; ?>,'serviceProviderId','tbl_service_provider_details')">
+													Delete</span>
+													<a href="<?php echo base_url(); ?>index.php/home/serviceProvider/<?php echo $value['serviceProviderId']; ?>"><span class="btn-white btn btn-xs">
+													Edit</span></a>
+													</td>
+												</tr>
+												<?php } ?>
+												<?php }?>
+												
+                                               </tbody>
+                                            </table>
+                                       </div>
+                        </div>
+						 </div>
+						 
+						 <div id="tab-1" class="tab-pane <?php if(!empty($serviceProviderById)){ echo 'active'; }else { echo ''; } ?>">
+						<div class="ibox-title">
+                            <h5>Service Provider Entry</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+						<div class="ibox-title">
+						   <form method="post" class="form-horizontal" enctype="multipart/form-data" action="<?php echo base_url(); ?>index.php/home/newExcelUplaodServiceProvider" >
+							   <div class="form-group" style="margin:0px;">
+								   <div class="row">
+									   <div class="col-lg-12">
+										   <label class="col-sm-4 control-label">Import Service Provider Excel</label>
+										   <div class="col-sm-8" style="display:flex;">
+											   <label style="border: 1px solid gray;margin-right: 5px;background-color: #8080801a;height:28px;">
+											   <input type="file" name="importExcel" required>
+											   </label>
+											   <button class="btn btn-primary" type="submit" style="padding:0px 5px;">Import</button>
+											   <a href="<?php echo base_url(); ?>index.php/home/download/service_provider_excel_format" class="btn btn-primary" style="margin-left: 5px;">Download Format</a>
+										   </div>
+									   </div>
+								   </div>
+							   </div>
+						   </form>
+					   </div>
+                        <div class="ibox-content">
+                          <form method="post" class="form-horizontal" enctype="multipart/form-data" action="<?php echo base_url(); ?>index.php/home/addServiceProvider/<?php if(!empty($serviceProviderById)){echo $serviceProviderById[0]['serviceProviderId']; }?>">
+							   <div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Service Type</label>
+										<div class="col-sm-10">
+											<select class="form-control m-b ff" name="serviceTypeId" id="serviceTypeId" onchange="getServiceFields()" required>
+												<option value="" readonly>Select Service Type</option>
+												<?php foreach($serviceTypeList as $value){ ?>
+												<option value="<?php echo $value['serviceTypeId'];?>"<?php if(!empty($serviceProviderById)){?> <?php if($serviceProviderById[0]['serviceTypeId'] == $value['serviceTypeId']){echo "selected ='selected'";}?><?php }?>><?php echo $value['serviceTypeName'];?></option>
+												<?php } ?>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Unique Id</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="uniqueId" id="uniqueId" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['uniqueId']; } ?>" required>
+											<span style="color:red;" id="error"></span>
+										</div>
+									</div>
+								</div>									
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<label class="col-sm-1 control-label">Service Fields</label>
+										<div class="col-sm-11">
+											<select data-placeholder="Choose Service Fields" class="chosen-select" multiple style="width:350px;" tabindex="4" id="serviceFields" name="serviceFields[]" required>
+												
+												<!-- Data Come from JS -->
+											</select>
+										</div>
+									</div>
+								</div>	
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<label class="col-sm-1 control-label">Address</label>
+										<div class="col-sm-11">
+											<textarea type="text" class="form-control" name="address" required><?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['address'];} ?></textarea>
+										</div>
+									</div>
+								</div>	
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Name</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="name" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['name'];} ?>" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Rating</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="rating" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['rating']; }?>" required>
+										</div>
+									</div>
+									
+								</div>	
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Landline</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="officePhone" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['officePhone'];} ?>" onkeypress="return isNumberKey(event)" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Mobile</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="mobileNo" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['mobile'];} ?>" maxlength ="10" onkeypress="return isNumberKey(event)" required>
+										</div>
+									</div>
+								</div>									
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Email</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control" name="email" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['email'];} ?>" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Other Mobile</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="otherMobile" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['otherMobile']; }?>" maxlength ="10" onkeypress="return isNumberKey(event)">
+										</div>
+									</div>
+								</div>		
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Skype Id</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="skypeId" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['skypeId'];} ?>">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Website</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="website" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['website'];} ?>">
+										</div>
+									</div>
+								</div>									
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Latitude</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="latitude" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['latitude'];} ?>" required  onkeypress="return isNumberDotKey(event,'lat')" id="lat">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Longitude</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="longitude" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['longitude'];} ?>" required onkeypress="return isNumberDotKey(event,'long')" id="long">
+										</div>
+									</div>
+								</div>	
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Location</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="location" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['location'];} ?>" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">State</label>
+										<div class="col-sm-10">
+											<select class="form-control m-b ff" name="state" id="state" onchange="getDistrict()" required>
+												<option value="" readonly>Select State</option>
+												<?php foreach($stateList as $value){ ?>
+												<option value="<?php echo $value['stateId'];?>" <?php if(!empty($serviceProviderById)){if($serviceProviderById[0]['state'] == $value['stateId']){echo "selected ='selected'";}}?>><?php echo $value['stateName'];?></option>
+												<?php } ?>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">District</label>
+										<div class="col-sm-10">
+											<select class="form-control m-b ff" name="districtId" id="districtId" required>
+												<!-- Data come from JS -->
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Qualification</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="qualification" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['qualification'];} ?>" required>
+										</div>
+									</div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Affiliation</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="affiliation" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['affiliation'];} ?>">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Linkage</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="linkage" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['linkage']; }?>">
+										</div>
+									</div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Days and Time</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="dayAndTime" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['dayAndTime'];} ?>">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Consulation Mode</label>
+										<div class="col-sm-10">
+											<select class="form-control m-b ff" name="conMode" required>
+												<option value="" readonly>Select Consulation Mode</option>
+												<?php foreach($modeList as $value){ ?>
+												<option value="<?php echo $value['modeId'];?>" <?php if(!empty($serviceProviderById)){ if($serviceProviderById[0]['conMode'] == $value['modeId']){echo "selected ='selected'";}}?>><?php echo $value['modeName'];?></option>
+												<?php } ?>
+											</select>
+										</div>
+									</div>
+								</div>	
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Consulation Charges</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="conCharges" value="<?php if(!empty($serviceProviderById)){echo $serviceProviderById[0]['conCharges'];} ?>">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<label class="col-sm-2 control-label">Concession</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" name="concession" value="<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['concession'];} ?>">
+										</div>
+									</div>
+								</div>									
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <a href="<?php echo base_url(); ?>index.php/home/serviceProvider" class="btn btn-white">Cancel</a>
+                                        <button class="btn btn-primary" type="button" onclick="getServiceUniqueId('<?php if(!empty($serviceProviderById)){ echo $serviceProviderById[0]['serviceProviderId']; }?>');">Submit</button>
+										 <button class="btn btn-primary" type="submit" id="submit" style="display:none;">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+ 
+                        </div>
+						 </div>
+						
+						</div>
+                    </div>
+                </div>
+				
+				
+				
+				
+				
+            </div>
+        </div>
+        <div class="footer">
+            
+        </div>
+
+        </div>
+        </div>
+		<?php if(!empty($serviceProviderById)){ if($serviceProviderById){ ?>
+		<script>
+			window.onload = function() {
+			  // alert('aaa');
+			   getDistrict();
+			   getServiceFields();
+			};
+		</script>
+		<?php } } ?>
+		<script>
+		/*function submitForm(){
+			//alert('aaa');
+			$('#submit').trigger('click');
+		}*/
+		function getServiceUniqueId(serviceProviderId){
+			//alert(serviceProviderId);
+			var id = $('#uniqueId').val();
+			//alert(id);
+			$.ajax({
+				type: "POST",
+				url: "<?php echo base_url(); ?>index.php/home/getServiceUniqueId",
+				data: {id:id,serviceProviderId:serviceProviderId},
+				success: function(data) {
+					//alert(data);
+					var rslt = $.trim(data);
+					result = JSON.parse(rslt);
+					var len = result.length;
+					//alert(result[0].total);
+					if(result[0].total == 0){
+						$('#error').html('');
+						$('#submit').trigger('click');
+					}else{
+						$('#error').html('Should be Unique Id');
+						$('#uniqueId').focus();
+					}
+				}
+			});
+		}
+		
+		function getServiceFields(){
+			var pausecontent = new Array();
+			<?php if(!empty($serviceProviderById)){$serviceFields = explode(',',$serviceProviderById[0]['serviceFields']);} ?>
+			<?php
+				foreach($serviceFields as $key => $val){ ?>
+				pausecontent.push('<?php echo $val; ?>');
+			<?php } ?>
+			//console.log(pausecontent);
+			var serviceTypeId = $('#serviceTypeId').val();
+			//alert(serviceTypeId);
+			$.ajax({
+				type: "POST",
+				url: "<?php echo base_url(); ?>index.php/home/getServiceFields",
+				data: {serviceTypeId:serviceTypeId},
+				success: function(data) {
+					//alert(data);
+					var rslt = $.trim(data);
+					result = JSON.parse(rslt);
+					var len = result.length;
+					//alert(result[0].total);
+					//alert("Image Approved");
+					htm = '<option value="" readonly>Select Service Fields</option>';
+					for(var i = 0; i < len; i++){
+						var idx = $.inArray(result[i].serviceTypeParameterId,pausecontent);
+						if (idx == -1) {
+							htm += '<option value="'+result[i].serviceTypeParameterId+'">'+result[i].serviceTypeParameterName+'</option>';
+						} else {
+							htm += '<option value="'+result[i].serviceTypeParameterId+'" selected>'+result[i].serviceTypeParameterName+'</option>';
+						}
+					}
+					//alert(htm);
+					$('#serviceFields').html('');
+					$('#serviceFields').html(htm);
+					$('#serviceFields').trigger("chosen:updated");
+				}
+			});
+			
+		}
+		
+		function getDistrict(){
+			var state = $('#state').val();
+			//alert(serviceTypeId);
+			$.ajax({
+				type: "POST",
+				url: "<?php echo base_url(); ?>index.php/home/getDistrict",
+				data: {state:state},
+				success: function(data) {
+					//alert(data);
+					var rslt = $.trim(data);
+					result = JSON.parse(rslt);
+					var len = result.length;
+					//alert(result[0].total);
+					//alert("Image Approved");
+					htm = '<option value="" readonly>Select District</option>';
+					for(var i = 0; i < len; i++){
+						
+						if(result[i].districtId == '<?php echo $serviceProviderById[0]['districtId']; ?>'){
+							htm += '<option value="'+result[i].districtId+'" selected>'+result[i].districtName+'</option>';
+						}else{
+							htm += '<option value="'+result[i].districtId+'">'+result[i].districtName+'</option>';
+						}
+						
+					}
+					
+					//alert(htm);
+					$('#districtId').html('');
+					$('#districtId').html(htm);
+					
+				}
+			});
+			
+		}
+		</script>
+		
+		
+		
+		
